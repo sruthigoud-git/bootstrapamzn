@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+
+    <head>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                scrollbar-width: none;
+            }
+
+            .entirebody {
+                width: 100%;
+                height: auto;
+                background-color: rgb(209, 217, 217)
+            }
+
+            .top {
+                width: 100%;
+                height: 40px;
+                margin-top: 60px;
+                background-color: rgb(32, 47, 62);
+            }
+
+            .nav {
+                width: 100%;
+                height: 60px;
+                background-color: black;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                justify-content: space-evenly;
+            }
+
+            .azlogo {
+                width: auto;
+                height: 40px;
+                margin-top: 20px;
+                margin-left: 10px;
+
+            }
+
+            .topleft1 {
+                width: 350px;
+                height: 100%;
+                display: flex;
+                gap: 10px;
+            }
+
+            .address {
+                margin-top: 20px;
+                margin-left: 10px;
+                color: white;
+
+            }
+
+            .location {
+                margin-top: 10px;
+                color: white;
+            }
+
+            .loc1 {
+                font-size: 12px;
+
+            }
+
+            .loc2 {
+                font-size: 15px;
+                margin-top: -15px;
+            }
+
+            .locadd {
+                display: flex;
+                gap: 5px;
+            }
+
+
+
+            .dropdown {
+                width: 60px;
+
+                background-color: rgb(194, 183, 183);
+                border-radius: 5px;
+                border: 1px solid gray;
+            }
+
+            .btn {
+                color: rgb(15, 14, 14);
+                background-color: rgb(221, 219, 191);
+            }
+
+            .search-grp {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 10px;
+                width: 750px;
+                color: black;
+            }
+
+            .input-group {
+                background-color: rgb(117, 115, 78);
+            }
+
+            .btnlang {
+                color: rgb(255, 255, 255);
+                background-color: transparent;
+                margin-top: 20px;
+                /* margin-left: 30px; */
+                border: none;
+                align-items: center;
+            }
+
+            .msg {
+                color: white;
+                font-size: 10px;
+                margin-left: 20px;
+                margin-top: 10px;
+                align-items: center;
+            }
+
+            .ro {
+                color: white;
+                font-size: 15px;
+                margin-left: 20px;
+                align-items: center;
+
+
+            }
+
+            .cart {
+                color: white;
+                display: flex;
+                color: white;
+                font-size: 25px;
+                margin-left: 20px;
+                /* margin-top: 15px; */
+                align-items: center;
+            }
+
+            .tap {
+                border: 1px solid transparent;
+                padding: 1px;
+                cursor: pointer;
+            }
+
+            .tap:hover {
+                border-color: white;
+            }
+
+            .clist {
+                padding: 4px;
+                margin-left: 15px;
+                cursor: pointer;
+                display: flex;
+
+            }
+
+
+            .cl1:hover {
+                border-color: white;
+            }
+
+            .cl2:hover {
+                border-color: white;
+            }
+
+            .cl1 {
+                color: white;
+                display: flex;
+                align-items: center;
+                width: auto;
+                gap: 5px;
+                border: 1px solid transparent;
+
+            }
+
+            .cl2 {
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: auto;
+                border: 1px solid transparent;
+                padding: 1px;
+                cursor: pointer;
+
+                margin-left: 12px;
+
+            }
+
+            .btmbody {
+                position: relative;
+                z-index: 0;
+                width: 100%;
+
+            }
+
+            .body1 {
+
+                width: 100%;
+                height: auto;
+                background-color: aquamarine;
+            }
+
+
+            .b2box1 {
+                width: 350px;
+                height: 400px;
+                background-color: white;
+
+                padding: 20px;
+                margin-left: 20px;
+
+
+            }
+
+            .body2 {
+                background: linear-gradient(to bottom, transparent, rgb(209, 217, 217), rgb(209, 217, 217));
+                position: relative;
+                /* background-color: rgb(142, 142, 138); */
+                bottom: 350px;
+                z-index: 10px;
+                cursor: pointer;
+            }
+
+            .body3 {
+                position: relative;
+                background-color: rgb(209, 217, 217);
+                bottom: 350px;
+                z-index: 10px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+
+
+
+            .grid1 {
+                justify-content: center;
+                align-items: center;
+                margin: 10px;
+
+            }
+
+            .b2items {
+                width: 140px;
+            }
+
+            .grid4 {
+                width: 350px;
+                height: 150px;
+                background-color: white;
+
+                padding: 20px;
+                margin-left: 20px;
+            }
+
+            .grid5 {
+                width: 350px;
+                height: 230px;
+                background-color: white;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                padding: 20px;
+                margin-left: 20px;
+
+
+
+            }
+
+            .fcorner {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+            }
+
+            .lastbtn {
+                width: 300px;
+                border-radius: 12px;
+                border: none;
+                margin-top: 10px;
+                padding: 4px;
+            }
+
+            .item1b4 {
+                width: 70px;
+
+            }
+
+            .item2b4 {
+                width: 50px;
+                margin-bottom: 10px;
+            }
+
+
+
+            .initems2 {
+                margin-top: -70px;
+                margin-left: 150px;
+            }
+
+            .intext {
+                margin-top: 5px;
+                font-size: 12px;
+            }
+
+            .body4 {
+                width: 100%;
+                height: auto;
+                background-color: rgb(209, 217, 217);
+                position: relative;
+                bottom: 350px;
+                z-index: 10px;
+                margin-top: 20px;
+                cursor: pointer;
+                justify-content: space-between;
+                overflow: scroll;
+            }
+
+            .bar {
+                width: 100%;
+                height: 300px;
+                background-color: white;
+                padding: 30px;
+                margin: auto;
+
+
+            }
+
+            .bartop {
+                margin-left: 40px;
+                margin-bottom: 10px;
+                margin: auto;
+
+            }
+
+            .body5 {
+                position: relative;
+                background-color: rgb(209, 217, 217);
+                bottom: 350px;
+                z-index: 10px;
+                margin-top: 20px;
+                cursor: pointer;
+            }
+
+            .phone {
+                margin-left: 50px;
+            }
+
+            .innerph {
+                height: 50px;
+                gap: 30px;
+            }
+
+            .ip1 {
+                border: 1px solid black;
+                padding: 5px;
+                border-radius: 3px;
+            }
+
+            .body6 {
+                width: 100%;
+                height: auto;
+                background-color: rgb(209, 217, 217);
+                position: relative;
+                bottom: 350px;
+                z-index: 10px;
+                margin-top: 20px;
+                cursor: pointer;
+                justify-content: space-between;
+                overflow: scroll;
+            }
+            .b5box1{
+                width: 350px;
+                height: auto;
+                background-color: white;
+
+                padding: 20px;
+                margin-left: 20px;
+            }
+            .d11{
+             width: 120px;
+            }
+        </style>
+    </head>
+
+<body>
+    <div class="entirebody">
+
+        <div class="nav">
+
+            <div class="topleft1">
+                <div class="tl1 tap">
+                    <img src="amazon-logo.png" class="azlogo" alt="">
+                </div>
+                <div class="locadd tap">
+                    <div class="address ">
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+
+                    <div class="location">
+                        <p class="loc1">Delivering to Hyderabad 501301</p>
+                        <h1 class="loc2">Upadate location</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="search-grp ">
+                <div class="input-group ">
+                    <button class="btn dropdown-toggle " type="button" data-bs-toggle="dropdown "
+                        aria-expanded="false">All</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">All Categories</a></li>
+                        <li><a class="dropdown-item" href="#">Alexa Skills</a></li>
+                        <li><a class="dropdown-item" href="#">Amazon Devices</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Amazon Fashion</a></li>
+                    </ul>
+                    <input type="text" class="form-control" placeholder="Search Amazon.in" aria-label="Username"
+                        aria-describedby="basic-addon1">
+
+                    <button class="btn bg-warning" type="button1" data-bs-toggle="dropdown1" aria-expanded="false"><i
+                            class="fa-solid fa-magnifying-glass"></i></button>
+
+                </div>
+
+
+            </div>
+
+            <div class="lang tap">
+                <button class="btnlang dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">ENG</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Telugu</a></li>
+                    <li><a class="dropdown-item" href="#">Hindi</a></li>
+                    <li><a class="dropdown-item" href="#">Malayalam</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#"></a></li>
+                </ul>
+            </div>
+            <div class="msg tap">
+                <p class="m-0">Hello,sign in</p>
+                <h6 class="m-0">Account & Lists</h6>
+            </div>
+            <div class="ro tap">
+                <p class="m-0 fw-bold">Returns</p>
+                <p class="m-0 fw-bold">&Orders</p>
+            </div>
+            <div class="cart tap ">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <h6>Cart</h6>
+            </div>
+
+        </div>
+
+        <div class="top">
+            <div class="clist">
+
+                <div class="cl1 "><i class="fa-solid fa-grip-lines"></i>
+
+                    <h6>All</h6>
+                </div>
+
+                <div class="cl2">Fresh</div>
+                <div class="cl2">MX Player</div>
+                <div class="cl2">Sell</div>
+                <div class="cl2">Best Sellers</div>
+                <div class="cl2">Today's Deals</div>
+                <div class="cl2">Mobiles</div>
+                <div class="cl2">prime</div>
+                <div class="cl2">Customer Servies</div>
+                <div class="cl2">New Releases</div>
+                <div class="cl2">Electronics</div>
+                <div class="cl2">Amazon Pay</div>
+                <div class="cl2">Fashion</div>
+                <div class="cl2">Home&Kitchen</div>
+                <div class="cl2">Computers</div>
+                <div class="cl2">Books</div>
+                <div class="cl2">Car&Motorbike</div>
+
+            </div>
+        </div>
+        <div class="btmbody">
+
+            <div class="body1">
+                <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="carousel1.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="carousel2.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="carousel3.png" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="body2 d-flex">
+                <div class="b2box1">
+                    <h1 class="fs-4">Continue shopping deals</h1>
+                    <div class="grid1">
+                        <div class=" d-flex gap-4">
+                            <div>
+                                <img src="item1b1.png" alt="">
+                            </div>
+
+                            <div>
+                                <img src="item2b1.png" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mt-2">
+                            <div>
+                                <img src="item2b1.png" alt="">
+                            </div>
+
+                            <div>
+                                <img src="item1b1.png" alt="">
+                            </div>
+
+                        </div>
+                        <p class="text-primary">See all deals</p>
+                    </div>
+                </div>
+                <div class="b2box1">
+                    <h1 class="fs-5">Appliances for your home | Up to 55%off</h1>
+                    <div class="grid1">
+                        <div class=" d-flex gap-4">
+                            <div>
+                                <img src="item1b2.png" class="b2items" alt="">
+                                <p class="intext">Air conditioners</p>
+                            </div>
+
+                            <div>
+                                <img src="item2b2.png" class="b2items" alt="">
+                                <p class="intext">Refrigerators</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mt-2 w-2">
+                            <div>
+                                <img src="item3b2.png" class="b2items" alt="">
+                                <p class="intext">Microwaves</p>
+                            </div>
+
+                            <div>
+                                <img src="item4b2.png" class="b2items" alt="">
+                                <p class="intext">Washing machines</p>
+                            </div>
+
+                        </div>
+                        <p class="text-primary mt-3">See more</p>
+                    </div>
+                </div>
+                <div class="b2box1">
+                    <h1 class="fs-5">Revamp your home in style</h1>
+                    <div class="grid2">
+                        <div class=" d-flex gap-4 mt-4">
+                            <div>
+                                <img src="item1b3.png" class="b2items" alt="">
+                                <p class="intext">Cushion covers</p>
+                            </div>
+
+                            <div>
+                                <img src="item2b3.png" class="b2items" alt="">
+                                <p class="intext">Vases&more</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mt-2 w-2">
+                            <div>
+                                <img src="item3b3.png" class="b2items" alt="">
+                                <p class="intext">Home storage</p>
+                            </div>
+
+                            <div>
+                                <img src="item4b3.png" class="b2items" alt="">
+                                <p class="intext">Lighting solutions</p>
+                            </div>
+
+                        </div>
+                        <p class="text-primary mt-3">Explore all</p>
+                    </div>
+                </div>
+                <div class="fcorner">
+                    <div class="grid4">
+                        <h1 class="fs-4">Sign in for your best experience</h1>
+                        <button class="bg-warning lastbtn">Sign in securely</button>
+                    </div>
+                    <div class="grid5">
+                        <div class="initems1">
+                            <img src="item2b4.png" class="item2b4" alt="">
+                        </div>
+                        <div class="initems2">
+
+                            <img src="item1b4.png" class="item1b4" alt="">
+                        </div>
+                        <h6>Urban Armor Gear UAG Galaxy S25 Case,Pathfinde...</h6>
+                        <button class="bg-danger text-light border-0 p-1">Limited time deal</button>
+                        <div class="price1 d-flex gap-2">
+                            <p class="text-danger">-32%</p>
+                            <p><i class="fa-solid fa-indian-rupee-sign"></i>4,749</p>
+                            <p>M.R.P.:</p>
+                            <s><i class="fa-solid fa-indian-rupee-sign"></i>6,999.00</s>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="body3 d-flex">
+                <div class="b2box1  ">
+                    <h1 class="fs-5">Starting <i class="fa-solid fa-indian-rupee-sign"></i>149 | Headphones</h1>
+                    <div class="grid2">
+                        <div class=" d-flex gap-4 mt-4">
+                            <div>
+                                <img src="item1bb2.png" class="b2items" alt="">
+                                <p class="intext">Starting <i class="fa-solid fa-indian-rupee-sign"></i>249 | boAt</p>
+                            </div>
+
+                            <div>
+                                <img src="item2bb2.png" class="b2items" alt="">
+                                <p class="intext">Starting <i class="fa-solid fa-indian-rupee-sign"></i>349 | boult</p>
+
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mt-2 w-2">
+                            <div>
+                                <img src="item3bb2.png" class="b2items" alt="">
+                                <p class="intext">Starting <i class="fa-solid fa-indian-rupee-sign"></i>649 | Noise</p>
+
+                            </div>
+
+                            <div>
+                                <img src="item4bb2.png" class="b2items" alt="">
+                                <p class="intext">Starting <i class="fa-solid fa-indian-rupee-sign"></i>149 | zebronics
+                                </p>
+
+                            </div>
+
+                        </div>
+                        <p class="text-primary mt-3">See all offers</p>
+                    </div>
+                </div>
+                <div class="b2box1">
+                    <h1 class="fs-5">Automotive essentials | Up to 60% off</h1>
+                    <div class="grid2">
+                        <div class=" d-flex gap-4 mt-4">
+                            <div>
+                                <img src="item1g2.png" class="b2items" alt="">
+                                <p class="intext">Cleaning accessories</p>
+                            </div>
+
+                            <div>
+                                <img src="item2g2.png" class="b2items" alt="">
+                                <p class="intext">Tyre & rim care</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mt-2 w-2">
+                            <div>
+                                <img src="item3g2.png" class="b2items" alt="">
+                                <p class="intext">Helmets</p>
+                            </div>
+
+                            <div>
+                                <img src="item4g2.png" class="b2items" alt="">
+                                <p class="intext">Vaccum cleaner</p>
+                            </div>
+
+                        </div>
+                        <p class="text-primary mt-3">See more</p>
+                    </div>
+                </div>
+                <div class="b2box1">
+                    <h1 class="fs-5">Starting <i class="fa-solid fa-indian-rupee-sign"></i>199 | Amazon Brands & more
+                    </h1>
+                    <div class="grid2">
+                        <div class=" d-flex gap-4 ">
+                            <div>
+                                <img src="p1g3.png" class="b2items" alt="">
+                                <p class="intext">Starting <i class="fa-solid fa-indian-rupee-sign"></i>199 | Bedsheets
+                                </p>
+                            </div>
+
+                            <div>
+                                <img src="p2g3.png" class="b2items" alt="">
+                                <p class="intext">Starting <i class="fa-solid fa-indian-rupee-sign"></i>199 | Curtains
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mt-2 w-2">
+                            <div>
+                                <img src="p3g3.png" class="b2items" alt="">
+                                <p class="intext">Minimum 40% off | boAt & more</p>
+                            </div>
+
+                            <div>
+                                <img src="p4g3.png" class="b2items" alt="">
+                                <p class="intext">Up to 40% off | Home decor</p>
+                            </div>
+
+                        </div>
+                        <p class="text-primary mt-3">See more</p>
+                    </div>
+                </div>
+                <div class="b2box1">
+                    <h1 class="fs-5">Explore more from Small Businesses</h1>
+                    <div class="grid2">
+                        <div class=" d-flex gap-4 mt-4">
+                            <div>
+                                <img src="i1g4.png" class="b2items" alt="">
+                                <p class="intext">Ethnic,dresses & more</p>
+                            </div>
+
+                            <div>
+                                <img src="i2g4.png" class="b2items" alt="">
+                                <p class="intext">Decor</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mt-2 w-2">
+                            <div>
+                                <img src="i3g4.png" class="b2items" alt="">
+                                <p class="intext">Fashion accessories</p>
+                            </div>
+
+                            <div>
+                                <img src="i4g4.png" class="b2items" alt="">
+                                <p class="intext">Glassware & drinkware</p>
+                            </div>
+
+                        </div>
+                        <p class="text-primary mt-3">Explore all</p>
+                    </div>
+                </div>
+            </div>
+            <div class="body4">
+                <div class="bar">
+                    <div class="bartop d-flex gap-4 ">
+                        <h3>Up to 60% off | Curated kitchen products | Amazon Launchpad</h3>
+                        <p class="text-primary fs-5">see all</p>
+                    </div>
+                    <div class="d-flex overflow-scroll gap-4">
+                        <img src="bar1.png" alt="">
+                        <img src="bar2.png" alt="">
+                        <img src="bar3.png" alt="">
+                        <img src="bar4.png" alt="">
+                        <img src="bar5.png" alt="">
+                        <img src="bar6.png" alt="">
+                        <img src="bar7.png" alt="">
+                        <img src="bar1.png" alt="">
+                        <img src="bar2.png" alt="">
+                        <img src="bar3.png" alt="">
+                        <img src="bar4.png" alt="">
+                        <img src="bar8.png" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="body4">
+                <div class="bar">
+                    <div class="bartop d-flex gap-4 ">
+                        <h3>Up to 80% off | Handcrafted products from artisans </h3>
+                        <p class="text-primary fs-5">see all offers</p>
+                    </div>
+                    <div class="d-flex overflow-scroll gap-5">
+                        <img src="1bar.png" alt="">
+                        <img src="2bar.png" alt="">
+                        <img src="3bar.png" alt="">
+                        <img src="4bar.png" alt="">
+                        <img src="5bar.png" alt="">
+                        <img src="6bar.png" alt="">
+                        <img src="1bar.png" alt="">
+                        <img src="2bar.png" alt="">
+                        <img src="3bar.png" alt="">
+                        <img src="4bar.png" alt="">
+                        <img src="5bar.png" alt="">
+                        <img src="6bar.png" alt="">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="body5 d-flex">
+                <div class="b5box1">
+                    <h1 class="fs-5">Keep shopping for</h1>
+                    <div class="grid2">
+                        <div class="  gap-4 mt-0">
+                            <div>
+                                <img src="phon1.png" class="phone" alt="">
+                                <div class="pdetail">
+                                    <p class="intext">Samsung Galaxy A35 5G Awesome Lilac,8GB RAM,123GB Strorage |
+                                        Premium Glass Back|50MP..</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2 mt-0">
+                                <p><i class="fa-solid fa-indian-rupee-sign"></i>25,999</p>
+                                <p>M.R.P:</p>
+                                <s><i class="fa-solid fa-indian-rupee-sign"></i>33,999</s>
+                            </div>
+                            <div class="d-flex innerph mt-0">
+                                <img src="phon1.png" class="ip1" alt="">
+                                <img src="phon1.png" class="ip1" alt="">
+                                <img src="phon1.png" class="ip1" alt="">
+                                <img src="phon1.png" class="ip1" alt="">
+                            </div>
+
+
+
+                            <p class="text-primary mt-3">See more</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="b5box1">
+                    <h1 class="fs-4">Best Sellers in Sports,Fitness & Outdoors</h1>
+                    <div class="grid1">
+                        <div class=" d-flex gap-4">
+                            <div>
+                                <img src="d1.png" class="d11" alt="">
+                            </div>
+
+                            <div>
+                                <img src="d2.png" class="d11" alt="">
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mt-2">
+                            <div>
+                                <img src="d3.png" class="d11" alt="">
+                            </div>
+
+                            <div>
+                                <img src="d4.png" class="d11"alt="">
+                            </div>
+
+                        </div>
+                        <p class="text-primary">See all deals</p>
+                    </div>
+                </div>
+                <div class="b5box1">
+                    <h1 class="fs-5">Keep shopping for</h1>
+                    <div class="grid2">
+                        <div class="  gap-4 mt-0">
+                            <div>
+                                <img src="phon1.png" class="phone" alt="">
+                                <div class="pdetail">
+                                    <p class="intext">Samsung Galaxy A35 5G Awesome Lilac,8GB RAM,123GB Strorage |
+                                        Premium Glass Back|50MP..</p>
+                                </div>
+                            </div>
+                            <div class="d-flex gap-2 mt-0">
+                                <p><i class="fa-solid fa-indian-rupee-sign"></i>25,999</p>
+                                <p>M.R.P:</p>
+                                <s><i class="fa-solid fa-indian-rupee-sign"></i>33,999</s>
+                            </div>
+                            <div class="d-flex innerph mt-0">
+                                <img src="phon1.png" class="ip1" alt="">
+                                <img src="phon1.png" class="ip1" alt="">
+                                <img src="phon1.png" class="ip1" alt="">
+                                <img src="phon1.png" class="ip1" alt="">
+                            </div>
+
+
+
+                            <p class="text-primary mt-3">See more</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="b5box1">
+                    <h1 class="fs-5">Explore more from Small Businesses</h1>
+                    <div class="grid2">
+                        <div class=" d-flex gap-4 mt-4">
+                            <div>
+                                <img src="i1g4.png" class="b2items" alt="">
+                                <p class="intext">Ethnic,dresses & more</p>
+                            </div>
+
+                            <div>
+                                <img src="i2g4.png" class="b2items" alt="">
+                                <p class="intext">Decor</p>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-4 mt-2 w-2">
+                            <div>
+                                <img src="i3g4.png" class="b2items" alt="">
+                                <p class="intext">Fashion accessories</p>
+                            </div>
+
+                            <div>
+                                <img src="i4g4.png" class="b2items" alt="">
+                                <p class="intext">Glassware & drinkware</p>
+                            </div>
+
+                        </div>
+                        <p class="text-primary mt-3">Explore all</p>
+                    </div>
+                </div>
+            </div>
+            <div class="body6">
+                <div class="bar">
+                    <div class="bartop d-flex gap-4 ">
+                        <h3>Petrol & electric vehicles from stores near you </h3>
+                        <p class="text-primary fs-5">see all offers</p>
+                    </div>
+                    <div class="d-flex overflow-scroll gap-5">
+                        <img src="1bike.png" alt="">
+                        <img src="5bike.png" alt="">
+                        <img src="2bike.png" alt="">
+                        <img src="3bike.png" alt="">
+                        <img src="1bike.png" alt="">
+                        <img src="5bike.png" alt="">
+                        <img src="2bike.png" alt="">
+                        <img src="3bike.png" alt="">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
